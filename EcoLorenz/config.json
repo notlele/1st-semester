@@ -1,0 +1,14 @@
+{
+    "database": {
+        "server": "ecolorenz.database.windows.net",
+        "user": "bandtec",
+        "password": "C0derteam",
+        "database": "ecolorenz",
+        "options": {
+            "encrypt": true
+        }
+    },
+    "security": {
+        "key": "CHAVE_SEGURANCA"
+    }
+}

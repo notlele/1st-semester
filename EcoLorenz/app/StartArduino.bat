@@ -1,0 +1,2 @@
+node NodeSensor.js
+pause

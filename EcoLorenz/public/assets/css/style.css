@@ -1,0 +1,44 @@
+.info {
+    font-size: 20px;
+    font-family: sans-serif;
+
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#div_usuario {
+	color: white;
+}
+
+.nav-text {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.right-divisor {
+    border-right: 1px solid #ccc;
+}
+
+.sidebar li {
+    font-size: 0.95em;
+    padding-top: 4.5px;
+    position: relative;
+}
+
+.room-title {
+    text-align: center;
+    font-size: 1.25em;
+}
+
+.sidebar-fix {
+    height: 93.7vh;
+}
+
+#cont_6aad6be16409459187c469553d942e9c {
+    margin-top: 80px;
+}

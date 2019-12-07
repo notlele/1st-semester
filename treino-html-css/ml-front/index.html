@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Busca</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+</head>
+
+
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Mercado Livre</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Categorias
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Livros</a>
+                        <a class="dropdown-item" href="#">Imóveis</a>
+                        <a class="dropdown-item" href="#">Celulares</a>
+                        <a class="dropdown-item" href="#">Brinquedos</a>
+                        <a class="dropdown-item" href="#">Moda</a>
+                        <a class="dropdown-item" href="#">Casa</a>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Histórico</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Ofertas da Semana<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Vender</a>
+                </li>
+            </ul>
+        <form class="form-inline my-2 my-lg-0"> 
+                <a class="fas fa-shopping-cart"></a>
+            <b class="pr-3"></b>
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar produtos...." aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+        </div>
+    </nav>
+    <br>
+       
+      <!-- container body -->
+    <div class="wrapper">
+        <!-- sidebar -->
+        <div class="row">
+            <div class="col-sm-3 pl-5 sidebar-sticky">
+            <ul class="nav flex-column">
+                <li><b>Carros</b><br><br></li>
+                <li>Filtrar por:</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Lojas Oficiais</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Localização</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Marca</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Modelo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Versões</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Ano</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Preço</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Portas</a>
+                </li>
+            </ul>
+        </div>
+    <div class="col-sm-8">
+        <br>
+        <div class="card-group">
+                <div class="card">
+                  <img src="https://http2.mlstatic.com/D_NQ_NP_777919-MLB29509314308_022019-UB.webp" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">R$24.000</h5>
+                    <p class="card-text">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</p>
+                  </div>
+                  <div class="card-footer">
+                        <a href=""><small class="nav-link">Adicionar ao carrinho</small></a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="https://http2.mlstatic.com/D_NQ_NP_661257-MLB28298866303_102018-UB.webp" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">R$37.000</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac erat libero. Suspendisse nec ornare quam, non consectetur neque. Vestibulum consequat pretium tempor. </p>
+                  </div>
+                  <div class="card-footer">
+                        <a href=""><small class="nav-link">Adicionar ao carrinho</small></a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="https://http2.mlstatic.com/D_NQ_NP_710252-MLB29404679382_022019-UB.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">R$15.000</h5>
+                  <p class="card-text">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</p>
+                </div>
+                <div class="card-footer">
+                      <a href=""><small class="nav-link">Adicionar ao carrinho</small></a>
+                </div>
+                </div>
+            </div>
+            <br>
+        </div>
+
+        <div class="col-sm-3"></div>
+        
+        <div class="col-sm-8">
+            <div class="card-group">
+                <div class="card">
+                  <img src="https://http2.mlstatic.com/D_NQ_NP_758266-MLB29400189176_022019-UB.webp" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">R$35.000</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac erat libero. Suspendisse nec ornare quam, non consectetur neque. Vestibulum consequat pretium tempor.</p>
+                  </div>
+                  <div class="card-footer">
+                        <a href=""><small class="nav-link">Adicionar ao carrinho</small></a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="https://http2.mlstatic.com/D_NQ_NP_921105-MLB29584526462_032019-UB.webp" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">R$10.000</h5>
+                    <p class="card-text">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</p>
+                  </div>
+                  <div class="card-footer">
+                        <a href=""><small class="nav-link">Adicionar ao carrinho</small></a>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="https://http2.mlstatic.com/D_NQ_NP_650424-MLB29371538705_022019-UB.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">R$27.000</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac erat libero. Suspendisse nec ornare quam, non consectetur neque. Vestibulum consequat pretium tempor.</p>
+                </div>
+                <div class="card-footer">
+                      <a href=""><small class="nav-link">Adicionar ao carrinho</small></a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+<br><br>
+
+
+
+        
+</body>
+</html>

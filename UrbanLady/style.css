@@ -1,0 +1,71 @@
+body {
+    background-image: url(img/back2.jpg);
+    background-size: cover;
+ 
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    color: rgba(183, 191, 226, 0.432);
+}
+
+p {
+    font-size: 0.9em;
+    margin-left: 3%;
+    color: white;
+}
+
+header {
+    text-align: center;
+}
+
+nav {
+    background: #DE9FFF;
+    border: 3.5px #DE9FFF solid;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+} 
+
+#botoes {
+    position: absolute;
+    right: 1%;
+    top: 2%;
+}
+
+button {
+    background-color:C0ABFF;
+    border: 1px solid #C0ABFF;
+}
+
+section {
+    margin-top: 20px;
+    /* display: flex; */
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+p{
+    font-size: 20px;
+}
+#icones{
+    display: flex;
+    margin: 30px auto;
+    align-items: center;
+    justify-content: center;
+}
+.ico{
+    display: flex;
+    align-items:center;
+justify-content: center;
+
+
+}
+
+footer

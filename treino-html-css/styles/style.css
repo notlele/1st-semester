@@ -1,0 +1,155 @@
+/* geral */
+
+body {
+    font-family: Barlow, Helvetica, Arial, sans-serif;
+    color: #4d4d4d;
+}
+
+h1,h2,h3 {
+    margin: 0;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.botao {
+    text-decoration: none;
+    color: #0B0B0B;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+/* navegação */
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0B0B0B;
+}
+
+#title {
+    text-decoration: none;
+    color: #B1BB34;
+    font-weight: 700;
+    font-size: 28px;
+    font-family: Pacifico, serif;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #B1BB34;
+    font-family: Barlow, Arial, Helvetica, sans-serif;
+}
+
+/* header */
+
+header {
+    background-image: url('https://www.imaginegurus.com/wp-content/uploads/2016/11/blurhome.jpg');
+    background-size: cover;
+    background-position: left;
+    color: #454545;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+header p {
+    margin-bottom: 2em;
+}
+
+/* about */
+
+#sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px 20px;
+    background-color: #CAD338;
+
+}
+
+#sobre p {
+    margin-bottom: 2.5em;
+    max-width: 1000px;
+}
+
+/* services */
+
+#servicos {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#servicos div {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* portfolio */
+
+#portfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#portfolio h2 {
+    margin-bottom: 20px;
+}
+
+#portfolio img {
+    width: 100%;
+}
+
+/* contato */
+
+#contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* footer */
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #0B0B0B;
+    color: #B1BB34;
+}
+
+/* media queries */
+
+@media screen and (min-width: 768px) {
+    /* nav */
+    nav {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    nav ul {
+        flex-direction: row;
+        width: 70%;
+    }
+}

@@ -1,0 +1,9 @@
+Segue o link para aprender como fiz!
+https://www.youtube.com/watch?annotation_id=annotation_3277182205&feature=iv&src_vid=DaD-eRasQ1A&v=014fy8sGPto
+-----------------------
+Node.js
+https://www.youtube.com/watch?v=kmT5mVBF2tI
+http://johnny-five.io/examples/multi-DHT11_I2C_NANO_BACKPACK/
+-----------------------
+Soft scroll
+https://pt.stackoverflow.com/questions/90119/efeito-deslizante-em-links-ancora

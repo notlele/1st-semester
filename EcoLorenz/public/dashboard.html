@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="pt-br; en" id="home">
+
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- jQuery -->
+	<script src="assets/js/jquery-3.3.1.min.js"></script>
+	<script src="assets/js/jquery-ui.js"></script>
+
+	<!-- Popper -->
+	<script src="assets/js/popper.min.js"></script>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/_navbar.scss">
+	<link rel="stylesheet" href="assets/css/_nav.scss">
+	<script src="assets/js/bootstrap.js"></script>
+
+	<!-- FONTS  -->
+	<link href="https://fonts.googleapis.com/css?family=Anton|Krub:400,600|PT+Sans:400,700|Roboto+Mono:400,500" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/font-awesome.css">
+	<script src="assets/js/7df7e1332b.js"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="assets/css/jquery-ui.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- Google Chart Library -->
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+	<!-- favicon NAO TIREM -->
+	<link rel="apple-touch-icon" sizes="57x57" href="/images/icon/images/icon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/icon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/icon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/icon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/icon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/icon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/icon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/icon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/icon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="/images/icon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/icon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/icon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/icon/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+</head>
+
+<body id="body" onload="iniciar()">
+
+	<!-- navbar -->
+	<nav class="navbar navbar-dark bg-dark p-1 shadow">
+		<!-- segunda opção com logo na brand -->
+		<!-- <img class="navbar-brand mr-0" src="/images/Icone.png" width="30px" height="35px"> -->
+		<a class="navbar-brand col-sm-3 col-md-2 mr-0 nav-text" href="">EcoLorenz</a>
+		<div id="div_usuario" style="display: none;">
+			Bem vindo,
+			<b id="b_usuario"></b>!
+		</div>
+		<div class="dropdown">
+			<button class="btn btn-secondary btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+			 aria-expanded="false">
+				Navegação
+			</button>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" href="#">Home</a>
+				<a class="dropdown-item" href="#">Conta</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="/logout">Sair</a>
+			</div>
+		</div>
+	</nav>
+
+	<!-- container -->
+	<div class="container-fluid">
+		<div class="row">
+			<!-- sidebar -->
+			<nav class="col-md-2 px-3 mr-0 d-none bg-light d-md-block sidebar right-divisor sidebar-fix">
+				<div class="sidebar-sticky">
+					<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-3 mb-3 text-muted">
+						<span>AMBIENTES</span>
+					</h6>
+					<ul class="nav flex-column" id="selectJanela">
+						<li class="nav-item">
+							<input type="radio" name="escolhaJanela" class="nav-link" id="selectQuarto1" value="q1">
+							<label for="selectQuarto1">Quarto 1</label>
+						</li>
+						<div class="dropdown-divider"></div>
+						<li class="nav-item">
+							<input type="radio" name="escolhaJanela" class="nav-link" id="selectQuarto2" value="q2">
+							<label for="selectQuarto2">Quarto 2</label>
+						</li>
+						<div class="dropdown-divider"></div>
+						<li class="nav-item">
+							<input type="radio" name="escolhaJanela" class="nav-link" id="selectSala" value="sala">
+							<label for="selectSala">Sala</label>
+						</li>
+						<div class="dropdown-divider"></div>
+						<li class="nav-item">
+							<input type="radio" name="escolhaJanela" class="nav-link" id="selectCozinha" value="cozinha">
+							<label for="selectCozinha">Cozinha</label>
+						</li>
+						<div id="cont_6aad6be16409459187c469553d942e9c"></div>
+					</ul>
+				</div>
+			</nav>
+
+			<!-- gráficos -->
+
+			<!-- grafico 1 -->
+			<div class="main col-md-9 ml-sm-auto col-lg-10 px-4 mt-3">
+				<div class="row">
+					<div class="col-md-12" id="abaQuarto1" style="display: block;">
+						<span class="room-title">QUARTO 1</span>
+						<div class="dropdown-divider"></div>
+						<div class="row align-items-start">
+							<div class="col-4" style="margin-top: 2em">
+								<div class="mb-2">
+									<img src="images/janelaaberta.jpg" id="janelaQuarto1" alt="janela aberta" width="70px" height="70px"> Status da Janela:
+									<span id="statusJanelaQuarto1"></span>
+								</div>
+								<br>
+								<div class="card" style="width: 18rem;">
+									<div class="card-body">
+										<h5 class="card-title mb-0">Medidas Temperatura</h5>
+										<span class="card-text">
+											<br> Min:
+											<b id="min_Temp"></b>
+											<br> Primero Quartil:
+											<b id="first_Temp"> </b>
+											</br>
+											Média:
+											<b id="b_media_temperatura"></b>
+											<br> Mediana:
+											<b id="mediana_Temp"></b>
+											<br> Terceiro Quartil:
+											<b id="third_Temp"></b>
+											<br> Max:
+											<b id="max_Temp"></b>
+											<br>
+										</span>
+									</div>
+								</div>
+								<br>
+								<div class="card" style="width: 18rem;">
+									<div class="card-body">
+										<h5 class="card-title  mb-0">Medidas Umidade</h5>
+										<span class="card-text">
+											<br> Min:
+											<b id="min_Humidity"></b>
+											<br> Primeiro Quartil:
+											<b id="first_Humidity"></b>
+											<br> Média:
+											<b id="b_media_umidade"></b>
+											<br> Mediana:
+											<b id="mediana_Humidity"></b>
+											<br> Terceiro Quartil:
+											<b id="third_Humidity"></b>
+											<br> Max:
+											<b id="max_Humidity"></b>
+											<br>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-8">
+								<div id="div_grafico_temperatura" style="width: 700px; height: 300px"></div>
+								<div id="div_grafico_umidade" style="width: 700px; height: 300px"></div>
+							</div>
+						</div>
+					</div>
+
+					<!-- grafico 2 -->
+					<div class="col-md-12" id="abaQuarto2" style="display: none;">
+						<span class="room-title">QUARTO 2</span>
+						<div class="dropdown-divider"></div>
+						<div class="row align-items-start">
+							<div class="col-4" style="margin-top: 2em">
+								<div class="mb-2">
+									<img src="images/janelaaberta.jpg" id="janelaQuarto2" alt="janela aberta" width="70px" height="70px"> Status da Janela:
+									<span id="statusJanelaQuarto2"></span>
+								</div>
+								<br>
+								<div class="card" style="width: 18rem;">
+									<div class="card-body">
+										<h5 class="card-title mb-0">Medidas Temperatura</h5>
+										<span class="card-text">
+											<br> Min:
+											<b id="min_Temp2"></b>
+											<br> Primero Quartil:
+											<b id="first_Temp2"> </b>
+											</br>
+											Média:
+											<b id="b_media_temperatura2"></b>
+											<br> Mediana:
+											<b id="mediana_Temp2"></b>
+											<br> Terceiro Quartil:
+											<b id="third_Temp2"></b>
+											<br> Max:
+											<b id="max_Temp2"></b>
+											<br>
+										</span>
+									</div>
+								</div>
+								<br>
+								<div class="card" style="width: 18rem;">
+									<div class="card-body">
+										<h5 class="card-title mb-0">Medidas Umidade</h5>
+										<span class="card-text">
+											<br> Min:
+											<b id="min_Humidity2"></b>
+											<br> Primeiro Quartil:
+											<b id="first_Humidity2"></b>
+											<br> Média:
+											<b id="b_media_umidade2"></b>
+											<br> Mediana:
+											<b id="mediana_Humidity2"></b>
+											<br> Terceiro Quartil:
+											<b id="third_Humidity2"></b>
+											<br> Max:
+											<b id="max_Humidity2"></b>
+											<br>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-8">
+								<div id="div_grafico_temperatura2" style="width: 700px; height: 300px"></div>
+								<div id="div_grafico_umidade2" style="width: 700px; height: 300px"></div>
+							</div>
+						</div>
+					</div>
+
+					<!-- grafico 3 -->
+					<div class="col-md-12" id="abaSala" style="display: none;">
+						<span class="room-title">SALA</span>
+						<div class="dropdown-divider"></div>
+						<div class="row align-items-start">
+							<div class="col-4" style="margin-top: 2em">
+								<div class="mb-2">
+									<img src="images/janelaaberta.jpg" id="janelaSala" alt="janela aberta" width="70px" height="70px"> Status da Janela:
+									<span id="statusJanelaSala"></span>
+								</div>
+								<br>
+								<div class="card" style="width: 18rem;">
+									<div class="card-body">
+										<h5 class="card-title mb-0">Medidas Temperatura</h5>
+										<span class="card-text">
+											<br> Min:
+											<b id="min_Temp3"></b>
+											<br> Primero Quartil:
+											<b id="first_Temp3"> </b>
+											</br>
+											Média:
+											<b id="b_media_temperatura3"></b>
+											<br> Mediana:
+											<b id="mediana_Temp3"></b>
+											<br> Terceiro Quartil:
+											<b id="third_Temp3"></b>
+											<br> Max:
+											<b id="max_Temp3"></b>
+											<br>
+										</span>
+									</div>
+								</div>
+								<br>
+								<div class="card" style="width: 18rem;">
+									<div class="card-body">
+										<h5 class="card-title mb-0">Medidas Umidade</h5>
+										<span class="card-text">
+											<br> Min:
+											<b id="min_Humidity3"></b>
+											<br> Primeiro Quartil:
+											<b id="first_Humidity3"></b>
+											<br> Média:
+											<b id="b_media_umidade3"></b>
+											<br> Mediana:
+											<b id="mediana_Humidity3"></b>
+											<br> Terceiro Quartil:
+											<b id="third_Humidity3"></b>
+											<br> Max:
+											<b id="max_Humidity3"></b>
+											<br>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-8">
+								<div id="div_grafico_temperatura3" style="width: 700px; height: 300px"></div>
+								<div id="div_grafico_umidade3" style="width: 700px; height: 300px"></div>
+							</div>
+						</div>
+					</div>
+
+					<!-- grafico 4 -->
+					<div class="col-md-12" id="abaCozinha" style="display: none;">
+						<span class="room-title">COZINHA</span>
+						<div class="dropdown-divider"></div>
+						<div class="row align-items-start">
+							<div class="col-4" style="margin-top: 2em">
+								<div class="mb-2">
+									<img src="images/janelaaberta.jpg" id="janelaCozinha" alt="janela aberta" width="70px" height="70px"> Status da Janela:
+									<span id="statusJanelaCozinha"></span>
+								</div>
+								<br>
+								<div class="card" style="width: 18rem;">
+									<div class="card-body">
+										<h5 class="card-title mb-0">Medidas Temperatura</h5>
+										<span class="card-text">
+											<br> Min:
+											<b id="min_Temp4"></b>
+											<br> Primero Quartil:
+											<b id="first_Temp4"> </b>
+											</br>
+											Média:
+											<b id="b_media_temperatura4"></b>
+											<br> Mediana:
+											<b id="mediana_Temp4"></b>
+											<br> Terceiro Quartil:
+											<b id="third_Temp4"></b>
+											<br> Max:
+											<b id="max_Temp4"></b>
+											<br>
+										</span>
+									</div>
+								</div>
+								<br>
+								<div class="card" style="width: 18rem;">
+									<div class="card-body">
+										<h5 class="card-title mb-0">Medidas Umidade</h5>
+										<span class="card-text">
+											<br> Min:
+											<b id="min_Humidity4"></b>
+											<br> Primeiro Quartil:
+											<b id="first_Humidity4"></b>
+											<br> Média:
+											<b id="b_media_umidade4"></b>
+											<br> Mediana:
+											<b id="mediana_Humidity4"></b>
+											<br> Terceiro Quartil:
+											<b id="third_Humidity4"></b>
+											<br> Max:
+											<b id="max_Humidity4"></b>
+											<br>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-8">
+								<div id="div_grafico_temperatura4" style="width: 700px; height: 300px"></div>
+								<div id="div_grafico_umidade4" style="width: 700px; height: 300px"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+</body>
+
+<footer>
+	<script type="text/javascript">
+		// <![CDATA[
+		var ttChatLoaderS = document.createElement('script');
+		document.tomticketChatLoaderScriptVersion = 2;
+		ttChatLoaderS.src = 'https://eco-lorenz.tomticket.com/scripts-chat/chat.min.js'
+			+ '?id=EP26301'
+			+ '&autoOpen=0'
+			+ '&hideWhenOffline=0'
+			+ '&d=eco-lorenz'
+			+ '&ts=' + new Date().getTime()
+			+ '&ref=' + encodeURIComponent(document.URL);
+		document.body.appendChild(ttChatLoaderS);
+				//]]>
+	</script>
+</footer>
+
+</html>
+
+
+<script>
+
+	var janelaAberta = false;
+	var LimiteMin;
+	var LimiteMax;
+
+	google.charts.load('current', { 'packages': ['corechart'] });
+
+	var graficoTemperatura;
+	var graficoUmidade;
+
+	var graficoTemperatura2;
+	var graficoUmidade2;
+
+	var graficoTemperatura3;
+	var graficoUmidade3;
+
+	var graficoTemperatura4;
+	var graficoUmidade4;
+
+
+
+	function iniciar() {
+		graficoTemperatura = new google.visualization.LineChart(document.getElementById('div_grafico_temperatura'));
+		graficoUmidade = new google.visualization.LineChart(document.getElementById('div_grafico_umidade'));
+
+		graficoTemperatura2 = new google.visualization.LineChart(document.getElementById('div_grafico_temperatura2'));
+		graficoUmidade2 = new google.visualization.LineChart(document.getElementById('div_grafico_umidade2'));
+
+		graficoTemperatura3 = new google.visualization.LineChart(document.getElementById('div_grafico_temperatura3'));
+		graficoUmidade3 = new google.visualization.LineChart(document.getElementById('div_grafico_umidade3'));
+
+		graficoTemperatura4 = new google.visualization.LineChart(document.getElementById('div_grafico_temperatura4'));
+		graficoUmidade4 = new google.visualization.LineChart(document.getElementById('div_grafico_umidade4'));
+
+		carregarUsuario();
+		carregarDadosGrafico();
+		setInterval(carregarMedidas, 2500);
+		setInterval(carregarDadosGrafico, 2500);
+	}
+
+
+
+
+	google.charts.setOnLoadCallback(plotarGraficos);
+
+	function plotarGraficos(nomeGrafico, grafico, dados) {
+		var options = {
+			title: `Histórico de ${nomeGrafico}`,
+			curveType: 'function',
+			legend: { position: 'bottom' }
+		};
+
+		grafico.draw(dados, options);
+	}
+
+
+	function carregarDadosGrafico() {
+
+		var vaiAbrir = false;
+		var id = 0;
+
+		var leituras = ['temperatura', 'umidade'];
+		var graficos = [[graficoTemperatura, graficoUmidade],
+		[graficoTemperatura2, graficoUmidade2],
+		[graficoTemperatura3, graficoUmidade3],
+		[graficoTemperatura4, graficoUmidade4]];
+
+		$.ajax({
+			cache: false,
+			method: "get",
+			url: `/leitura/ultimas/${leituras[id]}`,
+			success: function (resposta) {
+				vaiAbrir = resposta[resposta.length - 1][1] >= 23;
+				//console.log(resposta[resposta.length - 1][1], vaiAbrir);
+				var resposta2 = [['Momento', 'Temperatura']];
+				var resposta3 = [['Momento', 'Temperatura']];
+				var resposta4 = [['Momento', 'Temperatura']];
+
+				for (var i = 1; i < resposta.length; i++) {
+					resposta2.push([resposta[i][0], Number(resposta[i][1]) + 1]);
+					resposta3.push([resposta[i][0], Number(resposta[i][1]) - 1]);
+					resposta4.push([resposta[i][0], Number(resposta[i][1]) - 2]);
+				}
+
+				var dados = google.visualization.arrayToDataTable(resposta);
+				var dados2 = google.visualization.arrayToDataTable(resposta2);
+				var dados3 = google.visualization.arrayToDataTable(resposta3);
+				var dados4 = google.visualization.arrayToDataTable(resposta4);
+
+				plotarGraficos(leituras[id], graficos[0][id], dados);
+				plotarGraficos(leituras[id], graficos[1][id], dados2);
+				plotarGraficos(leituras[id], graficos[2][id], dados3);
+				plotarGraficos(leituras[id], graficos[3][id], dados4);
+			},
+			error: function (e) {
+				console.log("Erro:", e);
+			},
+			complete: function () {
+				$.ajax({
+					cache: false,
+					method: "get",
+					url: `/leitura/ultimas/${leituras[++id]}`,
+					success: function (resposta) {
+						vaiAbrir = vaiAbrir && resposta[resposta.length - 1][1] < 90;
+						//console.log(resposta[resposta.length - 1][1], vaiAbrir);
+						var dados = google.visualization.arrayToDataTable(resposta);
+						plotarGraficos(leituras[id], graficos[0][id], dados);
+						plotarGraficos(leituras[id], graficos[1][id], dados);
+						plotarGraficos(leituras[id], graficos[2][id], dados);
+						plotarGraficos(leituras[id], graficos[3][id], dados);
+					},
+					error: function (e) {
+						console.log("Erro:", e);
+					},
+					complete: function () {
+
+						$("#janelaSala").attr("src", `images/janela${vaiAbrir ? "aberta" : "fechada"}.jpg`);
+						$("#janelaQuarto1").attr("src", `images/janela${vaiAbrir ? "aberta" : "fechada"}.jpg`);
+						$("#janelaQuarto2").attr("src", `images/janela${vaiAbrir ? "aberta" : "fechada"}.jpg`);
+						$("#janelaCozinha").attr("src", `images/janela${vaiAbrir ? "aberta" : "fechada"}.jpg`);
+
+						$("#statusJanelaCozinha").text(vaiAbrir ? "Aberta" : "Fechada");
+						$("#statusJanelaQuarto2").text(vaiAbrir ? "Aberta" : "Fechada");
+						$("#statusJanelaSala").text(vaiAbrir ? "Aberta" : "Fechada");
+						$("#statusJanelaQuarto1").text(vaiAbrir ? "Aberta" : "Fechada");
+					}
+				});
+
+			}
+		});
+
+	}
+
+	function carregarMedidas() {
+		$.ajax({
+			cache: false,
+			method: "get",
+			url: "/leitura/medidas",
+			success: function (data) {
+
+				$('#b_media_temperatura').html(data.temperaturaMedia);
+				$('#b_media_umidade').html(data.umidadeMedia);
+
+				$('#b_media_temperatura2').html(data.temperaturaMedia + 1);
+				$('#b_media_umidade2').html(data.umidadeMedia + 1);
+
+				$('#b_media_temperatura3').html(data.temperaturaMedia - 1);
+				$('#b_media_umidade3').html(data.umidadeMedia - 1);
+
+				$('#b_media_temperatura4').html(data.temperaturaMedia - 2);
+				$('#b_media_umidade4').html(data.umidadeMedia - 2);
+
+				$('#min_Humidity').html(`${data.minimoUmi - 0}%`);
+				$('#min_Humidity2').html(`${data.minimoUmi + 1}%`);
+				$('#min_Humidity3').html(`${data.minimoUmi - 1}%`);
+				$('#min_Humidity4').html(`${data.minimoUmi - 2}%`);
+
+
+				$('#first_Humidity').html(`${data.primeiroQuartilUmi - 0}%`);
+				$('#first_Humidity2').html(`${data.primeiroQuartilUmi + 1}%`);
+				$('#first_Humidity3').html(`${data.primeiroQuartilUmi - 1}%`);
+				$('#first_Humidity4').html(`${data.primeiroQuartilUmi - 2}%`);
+
+				$('#mediana_Humidity').html(`${data.MedianaUmi - 0}%`);
+				$('#mediana_Humidity2').html(`${data.MedianaUmi + 1}%`);
+				$('#mediana_Humidity3').html(`${data.MedianaUmi - 1}%`);
+				$('#mediana_Humidity4').html(`${data.MedianaUmi - 2}%`);
+
+				$('#third_Humidity').html(`${data.TerceiroQuartilUmi - 0}%`);
+				$('#third_Humidity2').html(`${data.TerceiroQuartilUmi + 1}%`);
+				$('#third_Humidity3').html(`${data.TerceiroQuartilUmi - 1}%`);
+				$('#third_Humidity4').html(`${data.TerceiroQuartilUmi - 2}%`);
+
+				$('#max_Humidity').html(`${data.maximoUmi - 0}%`);
+				$('#max_Humidity2').html(`${data.maximoUmi + 1}%`);
+				$('#max_Humidity3').html(`${data.maximoUmi - 1}%`);
+				$('#max_Humidity4').html(`${data.maximoUmi - 2}%`);
+
+
+
+				$('#min_Temp').html(`${data.minimoTemp - 0}ºC`);
+				$('#min_Temp2').html(`${data.minimoTemp + 1}ºC`);
+				$('#min_Temp3').html(`${data.minimoTemp - 1}ºC`);
+				$('#min_Temp4').html(`${data.minimoTemp - 2}ºC`);
+
+				$('#first_Temp').html(`${data.PrimeiroQuartilTemp - 0}ºC`);
+				$('#first_Temp2').html(`${data.PrimeiroQuartilTemp + 1}ºC`);
+				$('#first_Temp3').html(`${data.PrimeiroQuartilTemp - 1}ºC`);
+				$('#first_Temp4').html(`${data.PrimeiroQuartilTemp - 2}ºC`);
+
+				$('#mediana_Temp').html(`${data.MedianaTemp - 0}ºC`);
+				$('#mediana_Temp2').html(`${data.MedianaTemp + 1}ºC`);
+				$('#mediana_Temp3').html(`${data.MedianaTemp - 1}ºC`);
+				$('#mediana_Temp4').html(`${data.MedianaTemp - 2}ºC`);
+
+				$('#third_Temp').html(`${data.TerceiroQuartilTemp - 0}ºC`);
+				$('#third_Temp2').html(`${data.TerceiroQuartilTemp + 1}ºC`);
+				$('#third_Temp3').html(`${data.TerceiroQuartilTemp - 1}ºC`);
+				$('#third_Temp4').html(`${data.TerceiroQuartilTemp - 2}ºC`);
+
+				$('#max_Temp').html(`${data.maximoTemp - 0}ºC`);
+				$('#max_Temp2').html(`${data.maximoTemp + 1}ºC`);
+				$('#max_Temp3').html(`${data.maximoTemp - 1}ºC`);
+				$('#max_Temp4').html(`${data.maximoTemp - 2}ºC`);
+
+			},
+			error: function (e) {
+				console.log("Erro:", e);
+			}
+		});
+	}
+
+
+
+	function carregarUsuario() {
+		$.ajax({
+			cache: false,
+			method: "get",
+			url: "/login/sessao",
+			success: function (data) {
+				$('#b_usuario').html(data.nome);
+				$('#div_usuario').show();
+			},
+			error: function (e) {
+				window.location.href = 'login.html';
+			}
+		});
+	}
+
+	$("#selectJanela").change(() => {
+		let abas = $("[id*=aba]");
+		for (let i = 0; i < abas.length; i++) {
+			$(abas[i]).hide();
+		}
+		switch ($("input[name=escolhaJanela]:checked").val()) {
+			case 'q1':
+				$(abas[0]).show();
+				break;
+			case 'q2':
+				$(abas[1]).show();
+				break;
+			case 'sala':
+				$(abas[2]).show();
+				break;
+			case 'cozinha':
+				$(abas[3]).show();
+				break;
+		}
+	});
+
+
+	conte = document.getElementById("cont_6aad6be16409459187c469553d942e9c");
+	if (conte) {
+		conte.style.cssText = "width: 120px; color: #868686; background-color:#FFFFFF; border: 1px solid #D6D6D6; margin: auto; margin-top: 280px; font-family: Roboto;";
+		elem = document.createElement("iframe");
+		elem.style.cssText = "width:111px; color:#868686; height:151px;";
+		elem.id = "6aad6be16409459187c469553d942e9c";
+		elem.src = "https://www.tempo.com/getwid/6aad6be16409459187c469553d942e9c";
+		elem.frameBorder = 0;
+		elem.allowTransparency = true;
+		elem.scrolling = "no";
+		elem.name = "flipe";
+		conte.appendChild(elem);
+	}
+</script>

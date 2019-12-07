@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cadastre-se</title>
+
+  <link href="assets/css/cadastro.css" rel="stylesheet">
+  
+  <!-- favicon NAO TIREM -->
+	<link rel="apple-touch-icon" sizes="57x57" href="/images/icon/images/icon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/icon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/icon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/icon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/icon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/icon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/icon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/icon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/icon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/images/icon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/icon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/images/icon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/icon/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body class="alignudows">
+
+  <a href="../index.html" id="logo">
+    <span id="nome"> Eco Lorenz</span>
+    <img src="images/Icone.png" id="iconezinho" style="width: 50px; margin-bottom: 10px" alt="icon">
+
+  </a>
+
+  <div class="grid">
+
+    <form id="formSignup" class="form login" onsubmit="return cadastrar();">
+
+      <div class="form__field">
+        <label for="login__cpf">
+          <svg class="icon"></svg>
+          <span class="hidden">CPF</span>
+        </label>
+        <input id="login__cpf" type="text" name="CPF" class="form__input" placeholder="CPF" required>
+      </div>
+
+      <div class="form__field">
+        <label for="login__name">
+          <svg class="icon"></svg>
+          <span class="hidden">Nome</span>
+        </label>
+        <input id="login__name" type="text" name="name" class="form__input" placeholder="Nome" required>
+      </div>
+
+      <div class="form__field">
+        <label for="login__tel">
+          <svg class="icon"></svg>
+          <span class="hidden">Telefone</span>
+        </label>
+        <input id="login__tel" type="text" name="tel" class="form__input" placeholder="Telefone" required>
+      </div>
+
+      <div class="form__field">
+        <label for="login__email">
+          <svg class="icon"></svg>
+          <span class="hidden">Email</span>
+        </label>
+        <input id="login__email" type="text" name="email" class="form__input" placeholder="Email" required>
+      </div>
+
+      <div class="form__field">
+        <label for="login__password">
+          <svg class="icon"></svg>
+          <span class="hidden">Senha</span>
+        </label>
+        <input id="login__password" type="password" name="password" class="form__input" placeholder="Senha" required>
+      </div>
+      
+      <div class="form__field">
+        <label for="login__cep">
+          <svg class="icon"></svg>
+          <span class="hidden">CEP</span>
+        </label>
+        <input id="login__cep" type="text" name="cep" class="form__input" placeholder="CEP" required>
+      </div>
+      
+      <div class="form__field">
+        <label for="login__number">
+          <svg class="icon"></svg>
+          <span class="hidden">Numero da casa</span>
+        </label>
+        <input id="login__number" type="text" name="nrCasa" class="form__input" placeholder="Numero da casa" required>
+      </div>
+
+
+      <div class="form__field">
+        <input type="submit" value="Cadastrar">
+      </div>
+
+      <div>
+        <span id="span_mensagem"></span>
+      </div>
+
+    </form>
+
+    <p class="text--center">Já está cadastrado ?
+      <a href="login.html">Entrar</a>
+      <svg class="icon"></svg>
+    </p>
+
+  </div>
+
+  <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+  <script>
+    function cadastrar() {
+      var dados = $('#formSignup').serialize();
+
+      $.ajax({
+        url: "signup",
+        method: 'POST',
+        data: dados
+      })
+        .done(function (resposta) {
+          alert('Cadastro realizado com sucesso');
+          window.location.href = '/login.html';
+        })
+        .fail(function (jqXHR, textStatus) {
+          $('#span_mensagem').html(textStatus);
+        });
+
+      return false;
+    }
+  </script>
+
+</body>
+
+</html>
