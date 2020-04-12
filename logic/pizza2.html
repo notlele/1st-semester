@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>quero pizza</title>
+  </head>
+  <body>
+    Valor máximo que a pizza deve ficar por amigo:
+    <input id="amigo" type="number" /><br />
+    Valor da pizza: <input id="pizza" type="number" /> <br /><br />
+    <button onclick="divisao()">Calcular divisão da conta</button>
+    <br /><br />
+
+    <div id="pode" style="display: none;">
+      A pizza pode ser comprada e a contribuição de cada um será de <b>R$</b
+      ><b id="valor"></b>.
+    </div>
+
+    <div id="naopode" style="display: none;">
+      Deu ruim! A pizza custa mais que o valor que o <b>KLB</b> pode pagar!
+    </div>
+  </body>
+</html>
+
+<script>
+  function divisao() {
+    var amigo = Number(document.getElementById("amigo").value);
+    var pizza = Number(document.getElementById("pizza").value);
+
+    if (pizza / 3 <= amigo) {
+      document.getElementById("pode").style.display = "block";
+      document.getElementById("naopode").style.display = "none";
+      var total = pizza / 3;
+      document.getElementById("valor").innerHTML = total.toFixed(2);
+    } else {
+      document.getElementById("pode").style.display = "none";
+      document.getElementById("naopode").style.display = "block";
+    }
+  }
+</script>

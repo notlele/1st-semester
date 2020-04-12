@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prova</title>
+</head>
+
+<body>
+    <div>
+        <p>Nome: <input type="text" id="nome"></p>
+        <p>Expectativa antes da faculdade: <input type="text" id="exp"></p>
+        <p>Média das notas: <input type="text" id="med"></p>
+        <p>Realidade após as provas: <input type="text" id="rea"></p>
+        <p></p><button onclick="go()">Mostrar fatos da faculdade</button></p>
+    </div>
+
+    <div>
+        <b id="nome1"></b>, antes de entrar na faculdade tinha a expectativa de <b id="exp1"></b>. Porém, como sua média
+        foi de
+        <b id="med1"></b>, sua realidade acabou sendo que <b id="rea1"></b>.
+    </div>
+</body>
+
+</html>
+
+<script>
+    function go() {
+        // pegar valor inserido em um input e colocar numa variavel
+        var nome = document.getElementById("nome").value;
+        document.getElementById("nome1").innerHTML = nome
+        var exp = document.getElementById("exp").value;
+        document.getElementById("exp1").innerHTML = exp
+        var med = document.getElementById("med").value;
+        document.getElementById("med1").innerHTML = med
+        var rea = document.getElementById("rea").value;
+        document.getElementById("rea1").innerHTML = rea
+    }</script>

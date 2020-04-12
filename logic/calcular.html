@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Numeros</title>
+  </head>
+  <body>
+    <h2>Numeros com JS</h2>
+
+    <p>
+      Numero 1: <input type="number" id="numero1" /> <br />
+      Numero 2: <input type="number" id="numero2" />
+    </p>
+
+    <button onclick="calcular()">Realizar Calculos</button>
+    <br /><br />
+    Soma: <b id="soma"></b><br />
+    Subtração: <b id="sub"></b><br />
+    Multiplicação: <b id="mult"></b><br />
+    Divisão: <b id="div"></b><br />
+    Potencia: <b id="pot"></b><br />
+    Raiz 1: <b id="raiz1"></b><br />
+    Raiz 2: <b id="raiz2"></b><br /><br />
+
+    Raiz 1 truncada em 2: <b id="raiz1t"></b><br />
+    Raiz 2 truncada em 2: <b id="raiz2t"></b><br /><br />
+
+    Raiz 1 arredondada: <b id="raiz1a"></b><br />
+    Raiz 2 arredondada: <b id="raiz2a"></b><br />
+  </body>
+</html>
+
+<script>
+  function calcular() {
+    // recuperando valores de campo como NUMEROS
+    var numero1 = Number(document.getElementById("numero1").value);
+    var numero2 = Number(document.getElementById("numero2").value);
+
+    // parseInt() para numeros inteiros e parseFloat() para reais
+
+    var sub = numero1 - numero2;
+    document.getElementById("sub").innerHTML = sub;
+    var soma = numero1 + numero2;
+    document.getElementById("soma").innerHTML = soma;
+    var div = numero1 / numero2;
+    document.getElementById("div").innerHTML = div;
+    var mult = numero1 * numero2;
+    document.getElementById("mult").innerHTML = mult;
+
+    // calcular potencia
+    var potencia = numero1 ** numero2;
+
+    // calcular raiz quadrada
+    var raiz1 = Math.sqrt(numero1);
+    var raiz2 = Math.sqrt(numero2);
+
+    document.getElementById("pot").innerHTML = potencia;
+    document.getElementById("raiz1").innerHTML = raiz1;
+    document.getElementById("raiz2").innerHTML = raiz2;
+
+    // truncando valores com var.toFixed(#)
+    var raiz1t = raiz1.toFixed(2);
+    var raiz2t = raiz2.toFixed(2);
+    document.getElementById("raiz1t").innerHTML = raiz1t;
+    document.getElementById("raiz2t").innerHTML = raiz2t;
+
+    // truncando valores com Math.round(var);
+    var raiz1a = Math.round(raiz1);
+    var raiz2a = Math.round(raiz2);
+    document.getElementById("raiz1a").innerHTML = raiz1a;
+    document.getElementById("raiz2a").innerHTML = raiz2a;
+  }
+</script>

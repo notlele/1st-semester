@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Atividade 1</title>
+  </head>
+  <body>
+    <p>
+      Quantos beijos deu no dia? <input type="number" id="numero1" /> <br />
+      Quantas horas de malhação fez no dia? <input type="number" id="numero2" />
+    </p>
+    <button onclick="calcular()">Descobrir perda Calórica</button>
+    <br /><br />
+
+    <h2>Calorias perdidas hoje</h2>
+
+    <b>Beijos:</b> <span id="bjs"></span> - Calorias: 20 x
+    <span id="bjs2"></span> = <b id="bjtotal"></b><br />
+    <b>Malhação:</b> <span id="horas"></span> horas - Calorias: 150 x
+    <span id="horas2"></span> = <b id="malhacaototal"></b>.<br />
+    <b>Total hoje:</b> <b><u id="total"></u></b> calorias. <br /><br />
+    <h2>Calorias perdidas nesse ritmo</h2>
+    Em <b>1 semana:</b> <span id="totalsemana"></span> x 7 =
+    <b id="semana"></b>. <br />
+    Em <b>1 mês:</b> <span id="totalmes"></span> x 30 = <b id="mes"></b>.
+  </body>
+</html>
+
+<script>
+  function calcular() {
+    var numero1 = Number(document.getElementById("numero1").value);
+    var numero2 = Number(document.getElementById("numero2").value);
+
+    var bjs = document.getElementById("numero1").value;
+    document.getElementById("bjs").innerHTML = bjs;
+    var bjs2 = document.getElementById("numero1").value;
+    document.getElementById("bjs2").innerHTML = bjs2;
+    var horas = document.getElementById("numero2").value;
+    document.getElementById("horas").innerHTML = horas;
+    var horas2 = document.getElementById("numero2").value;
+    document.getElementById("horas2").innerHTML = horas2;
+
+    var bjtotal = numero1 * 20;
+    document.getElementById("bjtotal").innerHTML = bjtotal;
+    var malhacaototal = numero2 * 150;
+    document.getElementById("malhacaototal").innerHTML = malhacaototal;
+    var total = bjtotal + malhacaototal;
+    document.getElementById("total").innerHTML = total;
+
+    var totalsemana = total;
+    document.getElementById("totalsemana").innerHTML = totalsemana;
+    var totalmes = total;
+    document.getElementById("totalmes").innerHTML = totalmes;
+
+    var semana = total * 7;
+    document.getElementById("semana").innerHTML = semana;
+    var mes = total * 30;
+    document.getElementById("mes").innerHTML = mes;
+  }
+</script>

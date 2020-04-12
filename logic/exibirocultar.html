@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <h2>Exibindo e ocultando partes da página</h2>
+    <!--
+         para ter partes ocultadas até certa ação ocorrer normalmente usamos divs ou spams
+    -->
+
+    <div id="div_bilete" style="display: none;">
+      Amanhã não terá aula. <br />
+      É verdade esse bilete. <br />
+    </div>
+    <button onclick="exibir()">Exibir bilete</button>
+  </body>
+</html>
+
+<script>
+  function exibir() {
+    // para alterar a exibição de um elemento
+    // alteramos seu style.display
+    // para tornar um elemento visível, os valores podem:
+    // "block", "table", "inherit", dentre outros
+    document.getElementById("div_bilete").style.display = "block";
+  }
+</script>

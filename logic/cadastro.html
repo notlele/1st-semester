@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <div>
+        <p>Nome do bairro: <input type="text" placeholder="Bairro" id="nome"></p>
+        <p>Habitantes do bairro: <input type="text" placeholder="Habitantes" id="hab"></p>
+        <p>Característica do bairro: <input type="text" placeholder="Caracteristica" id="car"></p>
+        <p><button onclick="cadastrar()">Cadastrar</button></p>
+    </div>
+
+    <div>
+        <br>
+        <p>O bairro <b id="bc"></b> possui <u id="hc"></u> habitantes e tem como característica <i id="cc"></i>.</p>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+        // pegar valor inserido em um input e colocar numa variavel
+        var nome = document.getElementById("nome").value;
+        document.getElementById("bc").innerHTML = nome
+        var hab = document.getElementById("hab").value;
+        document.getElementById("hc").innerHTML = hab
+        var car = document.getElementById("car").value;
+        document.getElementById("cc").innerHTML = car
+    }
+</script>

@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>emsm</title>
+  </head>
+  <body>
+    Valor máximo: <input id="max" type="number" /><br />
+    Valor da pizza: <input id="pizza" type="number" /> <br /><br />
+    <button onclick="pedir()">Dá pra pedir?</button>
+    <br /><br />
+
+    <div id="pode" style="display: none;">
+      Você PODE comprar a pizza e ainda sobra R$<b id="resto"></b>.
+    </div>
+
+    <div id="naopode" style="display: none;">
+      O iFood vai te entregar a pizza pelo valor que você tem.
+      <i>É verdade esse bilete.</i>
+    </div>
+  </body>
+</html>
+
+<script>
+  function pedir() {
+    var pizza = Number(document.getElementById("pizza").value);
+    var max = Number(document.getElementById("max").value);
+
+    if (pizza <= max) {
+      var resto = max - pizza;
+      document.getElementById("resto").innerHTML = resto.toFixed(2);
+      document.getElementById("pode").style.display = "block";
+      document.getElementById("naopode").style.display = "none";
+    } else {
+      document.getElementById("pode").style.display = "none";
+      document.getElementById("naopode").style.display = "block";
+    }
+  }
+</script>

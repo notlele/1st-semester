@@ -1,0 +1,37 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="identificador" /><br />
+
+    <button>Mostrar</button><br />
+    <button>Esconder</button>
+
+    <div id="caixa1">Sou a caixa 1</div>
+    <div id="caixa2">Vem pra caixa você também</div>
+    <div id="caixa3">Caixa de Pandora</div>
+  </body>
+</html>
+
+<script>
+  function mostrar() {
+    var id = document.getElementById("identificador").value;
+    alterarExibicao(id, true);
+  }
+
+  function esconder() {
+    var id = document.getElementById("identificador").value;
+    alterarExibicao(id, false);
+  }
+
+  function alterarExibicao() {
+    // argunmento "id" -> id do elemento
+    // argumento "visivel" -> considerar boleano
+    // true or false
+
+    var visibilidade = visivel ? "block" : "none";
+    document.getElementById(id).style.display = visibilidade;
+  }
+</script>

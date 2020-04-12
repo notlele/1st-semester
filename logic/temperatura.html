@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    Informe a temperatura: <input type="number" id="temperatura" /><br /><br />
+    <button onclick="verificar()">Verificar Temperatura</button>
+  </body>
+</html>
+
+<script>
+  function verificar() {
+    var temperatura = Number(document.getElementById("temperatura").value);
+
+    if (temperatura < 20 || temperatura > 25) {
+      alert(`Atenção! ${temperatura}° é desconfortável!`);
+    }
+  }
+</script>

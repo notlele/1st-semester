@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    Quantos quilômetros serão percorridos: <input type="number" id="km" /><br />
+    Valor do pedágio: <input type="number" id="vlr" /><br />
+    Quantidade de pedágios: <input type="number" id="qtd" /><br /><br />
+    <button onclick="custo()">Calcular custo da viagem</button>
+    <br /><br />
+
+    <div id="resultado" style="display: none;">
+      <h2>Viagem loka</h2>
+      Gasto com gasolina: <b>R$</b><b id="gasolina"></b>.<br />
+      <span id="pedagios-hide" style="display: none;"
+        >Gasto com pedágios: <b>R$</b><b id="pedagios"></b>.<br
+      /></span>
+      Gasto total: <b>R$</b><b id="total"></b>.
+    </div>
+  </body>
+</html>
+
+<script>
+  function custo() {
+    var km = Number(document.getElementById("km").value);
+    var vlr = Number(document.getElementById("vlr").value);
+    var qtd = Number(document.getElementById("qtd").value);
+
+    var gasolina = km * 4;
+    document.getElementById("gasolina").innerHTML = gasolina;
+    document.getElementById("resultado").style.display = "block";
+
+    if (qtd >= 1) {
+      var pedagios = vlr * qtd;
+      document.getElementById("pedagios").innerHTML = pedagios;
+      document.getElementById("pedagios-hide").style.display = "block";
+      var total = pedagios + gasolina;
+      document.getElementById("total").innerHTML = total;
+    } else {
+      document.getElementById("pedagios-hide").style.display = "none";
+      document.getElementById("total").innerHTML = gasolina;
+    }
+  }
+</script>

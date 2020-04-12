@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="nw" style="color: pink"><b></b></h1>
+    <p>Eu amo o <i><b id="nw2"></b></i> porque ele <b id="lov" style="color: pink"></b>!</p>
+    <br>
+    <h1 id="ex" style="color: red"><b></b></h1>
+    <p>Eu peguei ranço do <i><b id="ex2"></b></i> porque ele <b id="gr" style="color: red"></b>!</p>
+</body>
+
+</html>
+
+<script>
+    var nw = prompt('Qual o nome do novo crush?')
+    var lov = prompt('O que mais você ama nele?')
+    var ex = prompt('Qual o nome do ex?')
+    var gr = prompt('Por que você pegou ranço dele?')
+    document.getElementById('nw').innerHTML = nw
+    document.getElementById('nw2').innerHTML = nw
+    document.getElementById('lov').innerHTML = lov
+    document.getElementById('ex').innerHTML = ex
+    document.getElementById('ex2').innerHTML = ex
+    document.getElementById('gr').innerHTML = gr
+</script>

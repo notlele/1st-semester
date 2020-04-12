@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    Salário bruto da família: <input type="number" id="media" /><br />
+    Quantidade de pessoas: <input type="number" id="pessoas" /><br /><br />
+    <button onclick="verificar()">Verificar classe social</button>
+    <br /><br />
+    <div id="resultado" style="display: none;">
+      A renda média é de <b>R$</b><b id="renda"></b> Sua família está na classe
+      <b id="classe"></b> e faz parte de <b id="porcentagem"></b> da população.
+    </div>
+  </body>
+</html>
+
+<script>
+  function verificar() {
+    var media = Number(document.getElementById("media").value);
+    var pessoas = Number(document.getElementById("pessoas").value);
+    var renda = media / pessoas;
+    var classe;
+    var porcentagem;
+
+    if (renda >= 9733.47) {
+      classe = "A1";
+      porcentagem = "1%";
+    }
+
+    if (renda >= 6563.73 && renda < 9733.47) {
+      classe = "A2";
+      porcentagem = "4%";
+    }
+
+    if (renda >= 3479.36 && renda < 6563.73) {
+      classe = "B1";
+      porcentagem = "9%";
+    }
+
+    if (renda >= 2012.67 && renda < 3479.36) {
+      classe = "B2";
+      porcentagem = "15%";
+    }
+
+    if (renda >= 1194.53 && renda < 2012.67) {
+      classe = "C1";
+      porcentagem = "21%";
+    }
+
+    if (renda >= 726.26 && renda < 1194.53) {
+      classe = "C2";
+      porcentagem = "22%";
+    }
+
+    if (renda >= 484.97 && renda < 726.26) {
+      classe = "D";
+      porcentagem = "25%";
+    }
+
+    if (renda < 484.97) {
+      classe = "E";
+      porcentagem = "3%";
+    }
+
+    document.getElementById("renda").innerHTML = renda.toFixed(2);
+    document.getElementById("classe").innerHTML = classe;
+    document.getElementById("porcentagem").innerHTML = porcentagem;
+    document.getElementById("resultado").style.display = "block";
+  }
+</script>

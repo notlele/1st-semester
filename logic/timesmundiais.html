@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>emsm</title>
+  </head>
+  <body>
+    Time 1: <input id="time1" type="text" /><br />
+    Mundiais da FIFA: <input id="mund1" type="number" /><br />
+    Time 2: <input id="time2" type="text" /><br />
+    Mundiais da FIFA: <input id="mund2" type="number" /> <br /><br />
+    <button onclick="comparar()">Comparar times</button>
+    <br /><br />
+
+    <div id="dif" style="display: none;">
+      O <u id="vencedor"></u> é melhor que o <u id="perdedor"></u> porque ele
+      tem <b id="mundvencedor"></b> títulos mundiais contra
+      <b id="mundperdedor"></b>.
+    </div>
+
+    <div id="igual" style="display: none;">
+      Os times se equivalem. Pode torcer para qualquer um.
+    </div>
+  </body>
+</html>
+
+<script>
+  function comparar() {
+    var time1 = document.getElementById("time1").value;
+    var time2 = document.getElementById("time2").value;
+    var mund1 = Number(document.getElementById("mund1").value);
+    var mund2 = Number(document.getElementById("mund2").value);
+
+    var vencedor;
+    var perdedor;
+    var mundvencedor;
+    var mundperdedor;
+
+    if (mund1 > mund2) {
+      document.getElementById("dif").style.display = "block";
+      document.getElementById("igual").style.display = "none";
+      vencedor = time1;
+      perdedor = time2;
+      mundvencedor = mund1;
+      mundperdedor = mund2;
+      document.getElementById("vencedor").innerHTML = time1;
+      document.getElementById("perdedor").innerHTML = time2;
+      document.getElementById("mundvencedor").innerHTML = mund1;
+      document.getElementById("mundperdedor").innerHTML = mund2;
+    } else {
+      if (mund1 < mund2) {
+        document.getElementById("dif").style.display = "block";
+        document.getElementById("igual").style.display = "none";
+        vencedor = time2;
+        perdedor = time1;
+        mundvencedor = mund2;
+        mundperdedor = mund1;
+        document.getElementById("vencedor").innerHTML = time2;
+        document.getElementById("perdedor").innerHTML = time1;
+        document.getElementById("mundvencedor").innerHTML = mund2;
+        document.getElementById("mundperdedor").innerHTML = mund1;
+      } else {
+        document.getElementById("dif").style.display = "none";
+        document.getElementById("igual").style.display = "block";
+      }
+    }
+  }
+</script>

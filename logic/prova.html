@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prova</title>
+</head>
+
+<body>
+    <div>
+        <p>Pergunta: <input type="text" placeholder="" id="q"></p>
+        <p>a.) <input type="text" placeholder="" id="q1"></p>
+        <p>b.) <input type="text" placeholder="" id="q2"></p>
+        <p>c.) <input type="text" placeholder="" id="q3"></p>
+        <p>d.) <input type="text" placeholder="" id="q4"></p>
+        <p><button onclick="go()">Gerar questão</button></p>
+    </div>
+
+    <div>
+        <b><u>Pergunta:</u></b> <span id="qa" style="color: blue"></span><br>
+        <b>a.)</b> <span id="qa1"></span><br>
+        <b>b.)</b> <span id="qa2"></span><br>
+        <b>c.)</b> <span id="qa3"></span><br>
+        <b>d.)</b> <span id="qa4"></span>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function go() {
+        // pegar valor inserido em um input e colocar numa variavel
+        var q = document.getElementById("q").value;
+        document.getElementById("qa").innerHTML = q
+        var q1 = document.getElementById("q1").value;
+        document.getElementById("qa1").innerHTML = q1
+        var q2 = document.getElementById("q2").value;
+        document.getElementById("qa2").innerHTML = q2
+        var q3 = document.getElementById("q3").value;
+        document.getElementById("qa3").innerHTML = q3
+        var q4 = document.getElementById("q4").value;
+        document.getElementById("qa4").innerHTML = q4
+    }
+</script>

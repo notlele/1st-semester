@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prova</title>
+</head>
+<body>
+    <div>
+        <p>Nome do rapaz: <input type="text" id="mnome"></p>
+        <p>Poema do rapaz: <input type="text" id="mpoema"></p>
+        <p>Nome da moça: <input type="text" id="fnome"></p>
+        <p>Poema da moça: <input type="text" id="fpoema"></p>
+        <p>Tempo de namoro: <input type="text" id="tempo"></p>
+        <p></p><button onclick="go()">Gerar declaração</button></p>
+    </div>
+
+    <div>
+        <b id="nomem"></b> diz pra <b id="nomef"></b>: <b style="color: blue" id="poemam"></b> <b style="color: red">S2</b><br>
+        <b id="nomem2"></b> diz pra <b id="nomef2"></b>: <b style="color: blue" id="poemaf"></b> <b style="color: brown">S2</b><br> 
+        Owww, que lindo! Eles têm <b id="dias"></b> <b>dias</b> de namoro!
+    </div>
+</body>
+</html>
+
+<script>
+    function go() {
+        // pegar valor inserido em um input e colocar numa variavel
+        var nomem = document.getElementById("mnome").value;
+        document.getElementById("nomem").innerHTML = nomem
+        var nomem = document.getElementById("mnome").value;
+        document.getElementById("nomem2").innerHTML = nomem
+        var nomef = document.getElementById("fnome").value;
+        document.getElementById("nomef").innerHTML = nomef
+        var nomef = document.getElementById("fnome").value;
+        document.getElementById("nomef2").innerHTML = nomef
+        var poemam = document.getElementById("mpoema").value;
+        document.getElementById("poemam").innerHTML = poemam
+        var poemaf = document.getElementById("fpoema").value;
+        document.getElementById("poemaf").innerHTML = poemaf
+        var dias = document.getElementById("tempo").value;
+        document.getElementById("dias").innerHTML = dias
+    }
+</script>

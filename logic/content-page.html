@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Changing page content with JS</title>
+
+    <style>
+      #nome {
+        color: #538eff;
+      }
+
+      #email {
+        color: #60eaff;
+      }
+
+      #idade {
+        color: #8bffcd;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Sign In</h2>
+
+    Seu nome: <span id="nome"></span> <br />
+    Seu email: <span id="email"></span> <br />
+    Seu idade: <span id="idade"></span> <br />
+  </body>
+
+  <script></script>
+</html>
+
+<script>
+  var seu_nome = prompt("Como você se chama?");
+  var seu_email = prompt("Qual o seu email?");
+  var sua_idade = prompt("Quantos anos você tem?");
+
+  // alterando o conteudo de algum elemento html
+  document.getElementById("nome").innerHTML = seu_nome;
+  document.getElementById("email").innerHTML = seu_email;
+  document.getElementById("idade").innerHTML = sua_idade;
+</script>

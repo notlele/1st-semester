@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Aprovação</title>
+  </head>
+  <body>
+    Media do aluno: <input type="number" id="media" /><br />
+    Frequência do aluno: <input type="number" id="frequencia" /><br /><br />
+    <button onclick="verificar()">Verificar situação</button>
+  </body>
+</html>
+
+<script>
+  function verificar() {
+    var media = Number(document.getElementById("media").value);
+    var frequencia = Number(document.getElementById("frequencia").value);
+
+    if (frequencia < 0 || frequencia > 100 || media < 0 || media > 10) {
+      alert("A média deve ser entre 0 e 10 e a frequência entre 0 e 100");
+    } else if (frequencia < 75 || media < 7) {
+      alert("#deuruim... aluno reprovado");
+    } else {
+      alert("O aluninho está APROVADO! Viva, uhu!!!");
+    }
+  }
+</script>

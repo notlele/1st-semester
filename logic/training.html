@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    Informe um número qualquer: <input type="number" id="number" /><br /><br />
+    <button onclick="verificar()">Deu TOC?</button>
+
+    <div id="sim" style="display: none;">
+      <b>Vixe, sai de perto que lá vem o chilique!</b>
+    </div>
+
+    <div id="nao" style="display: none;">
+      <b>Ufa... número de boa!</b>
+    </div>
+  </body>
+</html>
+
+<script>
+  function verificar() {
+    var numero = Number(document.getElementById("number").value);
+
+    if (numero == 6 || numero == 9) {
+      document.getElementById("sim").style.display = "block";
+      document.getElementById("nao").style.display = "none";
+    } else {
+      document.getElementById("sim").style.display = "none";
+      document.getElementById("nao").style.display = "block";
+    }
+  }
+</script>

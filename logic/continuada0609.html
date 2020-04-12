@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Atividade 2</title>
+  </head>
+  <body>
+    <p>
+      Nome do 1º produto: <input type="text" id="p1" /> Valor unitário:
+      <input type="number" id="v1" /> Quantidade:
+      <input type="number" id="q1" />
+      <br />
+      Nome do 2º produto: <input type="text" id="p2" /> Valor unitário:
+      <input type="number" id="v2" /> Quantidade:
+      <input type="number" id="q2" />
+      <br />
+      Nome do 3º produto: <input type="text" id="p3" /> Valor unitário:
+      <input type="number" id="v3" /> Quantidade:
+      <input type="number" id="q3" />
+      <br />
+      Nome do 4º produto: <input type="text" id="p4" /> Valor unitário:
+      <input type="number" id="v4" /> Quantidade:
+      <input type="number" id="q4" />
+      <br />
+    </p>
+
+    <button onclick="calcular()">Calcular Conta</button>
+    <br /><br />
+
+    <h2>Conta Fechada</h2>
+    <ol>
+      <li>
+        <span id="nome1"></span>. R$<span id="valor1"></span> x
+        <span id="quan1"></span> - <b id="total1"></b>
+      </li>
+      <li>
+        <span id="nome2"></span>. R$<span id="valor2"></span> x
+        <span id="quan2"></span> - <b id="total2"></b>
+      </li>
+      <li>
+        <span id="nome3"></span>. R$<span id="valor3"></span> x
+        <span id="quan3"></span> - <b id="total3"></b>
+      </li>
+      <li>
+        <span id="nome4"></span>. R$<span id="valor4"></span> x
+        <span id="quan4"></span> - <b id="total4"></b>
+      </li>
+    </ol>
+
+    <b>Total:</b> <b><u>R$</u></b
+    ><b><u id="total"></u></b>
+  </body>
+</html>
+
+<script>
+  function calcular() {
+    var p1 = document.getElementById("p1").value;
+    document.getElementById("nome1").innerHTML = p1;
+    var v1 = Number(document.getElementById("v1").value);
+    document.getElementById("valor1").innerHTML = v1;
+    var q1 = Number(document.getElementById("q1").value);
+    document.getElementById("quan1").innerHTML = q1;
+    var p2 = document.getElementById("p2").value;
+    document.getElementById("nome2").innerHTML = p2;
+    var v2 = Number(document.getElementById("v2").value);
+    document.getElementById("valor2").innerHTML = v2;
+    var q2 = Number(document.getElementById("q2").value);
+    document.getElementById("quan2").innerHTML = q2;
+    var p3 = document.getElementById("p3").value;
+    document.getElementById("nome3").innerHTML = p3;
+    var v3 = Number(document.getElementById("v3").value);
+    document.getElementById("valor3").innerHTML = v3;
+    var q3 = Number(document.getElementById("q3").value);
+    document.getElementById("quan3").innerHTML = q3;
+    var p4 = document.getElementById("p4").value;
+    document.getElementById("nome4").innerHTML = p4;
+    var v4 = Number(document.getElementById("v4").value);
+    document.getElementById("valor4").innerHTML = v4;
+    var q4 = Number(document.getElementById("q4").value);
+    document.getElementById("quan4").innerHTML = q4;
+
+    var total1 = q1 * v1;
+    document.getElementById("total1").innerHTML = total1;
+
+    var total2 = q2 * v2;
+    document.getElementById("total2").innerHTML = total2;
+
+    var total3 = q3 * v3;
+    document.getElementById("total3").innerHTML = total3;
+
+    var total4 = q4 * v4;
+    document.getElementById("total4").innerHTML = total4;
+
+    var total = total1 + total2 + total3 + total4;
+    document.getElementById("total").innerHTML = total;
+  }
+</script>

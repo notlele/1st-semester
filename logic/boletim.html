@@ -1,0 +1,49 @@
+<!-- neste boletim, não é permitido ter disciplina em branco -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Boletim com decisão</title>
+  </head>
+  <body>
+    <h2>Boletim com decisão</h2>
+    Disciplina: <input type="text" id="disciplina" /><br />
+    Media Final: <input type="number" id="media" /> <br /><br />
+    <button onclick="VerificarResultado()">Verificar resultado</button>
+    <br /><br />
+    <div id="div-resultado" style="display: none;">
+      Na disciplina <b id="disciplina-resultado"></b> o aluno ficou
+      <u id="resultado"></u>.
+    </div>
+
+    <div id="div_erros" style="display: none; color: red;"></div>
+  </body>
+</html>
+
+<script>
+  function verificarResultado() {
+    var disciplina = document.getElementById("disciplina").value;
+
+    // SE a disciplina estiver em branco,
+    // coloque uma mensagem na "div_erros" e exiba ela
+
+    if (disciplina == "") {
+      var mensagem = "Onde já se viu disciplina sem nome?!";
+      document.getElementById("div_erros").innerHTML = mensagem;
+      document.getElementById("div_erros").style.display = "block";
+      document.getElementById("div_resultado").style.display = "none";
+    } else {
+      document.getElementById("div_erros").style.display = "none";
+      var media = Number(document.getElementById("media").value);
+      document.getElementById("disciplina_resultado").innerHTML = disciplina;
+      var resultado;
+      if (media >= 5) {
+        resultado = "Aprovado";
+      } else {
+        resultado = "Reprovado";
+      }
+
+      document.getElementById("resultado").innerHTML = resultado;
+      document.getElementById("div_resultado").style.display = "block";
+    }
+  }
+</script>

@@ -1,0 +1,94 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    Quantos produtos? <input id="qtdProd" type="number" /><br />
+    <button onclick="cadastrar()">Cadastrar produtos</button><br /><br />
+
+    <button id="relatorio" onclick="relatorio()" style="display: none;">
+      Relatório de estoque</button
+    ><br />
+
+    <div id="relatorio_div" style="display: none;">
+      Produtos cadastrados: <b id="prod"></b> <br />
+
+      Total de itens no estoque: <b id="estoque"></b><br />
+
+      Valor total do estoque: <b>R$</b><b id="vlrEstoque"></b><br />
+
+      Produto mais barato: <b id="nomeBarato"></b> - <b>R$</b
+      ><b id="barato"></b> por <b id="uniBarato"></b> <br />
+
+      Produto mais caro: <b id="nomeCaro"></b> - <b>R$</b><b id="caro"></b> por
+      <b id="uniCaro"></b>
+    </div>
+  </body>
+</html>
+
+<script>
+  var qtdProd = Number(document.getElementById("qtdProd").value);
+  var cont = 0;
+  var nomeProd;
+  var vlrProd = 0;
+  var caro = vlrProd;
+  var nomeCaro;
+  var uniCaro;
+  var barato = vlrProd;
+  var uniBarato;
+  var nomeBarato;
+  var uniProd;
+  var uniEstoque;
+  var estoque = 0;
+  var vlrEstoque = 0;
+  function cadastrar() {
+    qtdProd = Number(document.getElementById("qtdProd").value);
+    while (cont < qtdProd) {
+      cont++;
+      do {
+        nomeProd = prompt(`Nome do ${cont}º produto`);
+      } while (nomeProd.length < 2);
+      do {
+        vlrProd = Number(prompt(`Valor unitário de ${nomeProd}`));
+      } while (vlrProd <= 0);
+
+      do {
+        uniProd = prompt(
+          `Unidade de venda (Kg, Und, Litros etc) de ${nomeProd}`
+        );
+      } while (uniProd.length < 1);
+      do {
+        uniEstoque = Number(
+          prompt(`Quantos ${uniProd} em estoque de ${nomeProd}`)
+        );
+      } while (uniEstoque <= 0);
+      if (barato == 0 || vlrProd < barato) {
+        barato = vlrProd;
+        nomeBarato = nomeProd;
+        uniBarato = uniProd;
+      }
+      if (vlrProd > caro) {
+        caro = vlrProd;
+        nomeCaro = nomeProd;
+        uniCaro = uniProd;
+      }
+      estoque += uniEstoque;
+      vlrEstoque = vlrEstoque + vlrProd * uniEstoque;
+    }
+    if (qtdProd > 0) {
+      document.getElementById("relatorio").style.display = "block";
+    }
+  }
+  function relatorio() {
+    document.getElementById("relatorio_div").style.display = "block";
+    document.getElementById("prod").innerHTML = qtdProd;
+    document.getElementById("estoque").innerHTML = estoque;
+    document.getElementById("vlrEstoque").innerHTML = vlrEstoque;
+    document.getElementById("nomeBarato").innerHTML = nomeBarato;
+    document.getElementById("barato").innerHTML = barato;
+    document.getElementById("uniBarato").innerHTML = uniBarato;
+    document.getElementById("nomeCaro").innerHTML = nomeCaro;
+    document.getElementById("caro").innerHTML = caro;
+    document.getElementById("uniCaro").innerHTML = uniCaro;
+  }
+</script>

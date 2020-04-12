@@ -1,0 +1,76 @@
+<html>
+  <body>
+    <input type="number" id="nrIngredientes" /><br /><br />
+    <button onclick="pizza()">montar pizza</button>
+    <button onclick="custo()">calcular custo da pizza</button>
+    <button onclick="finalizarPizza()">finalizar pizza</button>
+
+    <div style="display: none;" id="div_resultado">
+      Sua pizza ficou com <span id="quant_ingredientes"></span> ingredientes,
+      que são: <br /><br />
+      <span id="lista_ingredientes"></span><br />
+      Custo total da pizza: R$<span id="custo_pizza"></span>
+    </div>
+  </body>
+</html>
+
+<script>
+  var ingredientes = [
+    "queijo branco",
+    "queijo mussarela",
+    "queijo prato",
+    "calabresa",
+    "presunto",
+    "presunto parma",
+    "peito de peru",
+    "frango",
+    "catupiry",
+  ];
+  // array para ingredientes já selecionados
+  var ingredientes_selecionados = [];
+  var cont = 0;
+
+  function pizza() {
+    var nrIngredientes = document.getElementById("nrIngredientes").value;
+
+    if (nrIngredientes >= 0 && nrIngredientes < ingredientes.length) {
+      // pegando o ingrediente de acordo com o nrIngredientes
+      var ingrediente = ingredientes[nrIngredientes];
+
+      // verificando se o ingrediente está no array de ingredientes já selecionados
+      for (i = 0; i < ingredientes_selecionados.length; i++) {
+        if (ingrediente == ingredientes_selecionados[i]) {
+          alert(`Ingrediente já adicionado`);
+          return; // sai da função imediatamente
+        }
+      }
+
+      // coloca o ingrediente no array ingredientes_selecionados
+      ingredientes_selecionados.push(ingrediente);
+      cont++;
+      alert(`Ingredientes na sua pizza: ${cont}`);
+    } else {
+      alert("Nº de ingrediente inválido!");
+    }
+  }
+
+  function custo() {
+    var valor = 1.5 * cont;
+    alert(`Sua pizza está custando R$${valor}`);
+  }
+
+  function finalizarPizza() {
+    document.getElementById("quant_ingredientes").innerHTML =
+      ingredientes_selecionados.length;
+    var lista = "";
+    for (p = 0; p < ingredientes_selecionados.length; p++) {
+      lista += `${p + 1}. ${ingredientes_selecionados[p]}<br>`;
+    }
+    document.getElementById("lista_ingredientes").innerHTML = lista;
+    document.getElementById("custo_pizza").innerHTML = (
+      ingredientes_selecionados.length * 1.5
+    ).toFixed(2);
+
+    document.getElementById("div_resultado").style.display = "block";
+  }
+</script>

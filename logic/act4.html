@@ -1,0 +1,30 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1><b>Pizzaria Pizza Meba</b></h1>
+    <p><b>Sabor criado: </b> <u id="name" style="color: purple"></u></p>
+    <p><b>Ingredientes:</b></p>
+    <ul style="color: green">
+        <li><span id="i1"></span></li>
+        <li><span id="i2"></span></li>
+        <li><span id="i3"></span></li>
+    </ul>
+</body>
+
+</html>
+
+<script>
+    var name = prompt('Qual o nome do sabor que você criou?')
+    var i1 = prompt('Ingrediente 1:')
+    var i2 = prompt('Ingrediente 2:')
+    var i3 = prompt('Ingrediente 3:')
+    document.getElementById('i1').innerHTML = i1
+    document.getElementById('i2').innerHTML = i2
+    document.getElementById('i3').innerHTML = i3
+    document.getElementById('name').innerHTML = name
+</script>

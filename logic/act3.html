@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p><b>Bairro 1:</b> <span id="bai1" style="color: blue"></span></p>
+        <p><b>População:</b> <span id="pop1" style="color: blue"></span> <b>habitantes</b></p>
+        <p><b>Principal característica:</b> <span id="car1" style="color: blue"></span></p>
+    </div>
+
+    <div>
+        <p><b>Bairro 2:</b> <span id="bai2" style="color: red"></span></p>
+        <p><b>População:</b> <span id="pop2" style="color: red"></span> <b>habitantes</b></p>
+        <p><b>Principal característica:</b> <span id="car2" style="color: red"></span></p>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var bai1 = prompt('Qual o nome do primeiro bairro?')
+    var pop1 = prompt('Qual a população?')
+    var car1 = prompt('Qual a principal característica dele?')
+    var bai2 = prompt('Qual o nome do segundo bairro?')
+    var pop2 = prompt('Qual a população?')
+    var car2 = prompt('Qual a principal característica dele?')
+    document.getElementById('bai1').innerHTML = bai1
+    document.getElementById('pop1').innerHTML = pop1
+    document.getElementById('car1').innerHTML = car1
+    document.getElementById('bai2').innerHTML = bai2
+    document.getElementById('pop2').innerHTML = pop2
+    document.getElementById('car2').innerHTML = car2
+</script>

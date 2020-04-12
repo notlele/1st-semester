@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Times</title>
+</head>
+
+<body>
+    <div>
+        <p>Defina o time do Corinthians em uma frase: <input type="text" placeholder="Corinthians" id="corinthians"></p>
+        <p>Defina o time do Palmeiras em uma frase: <input type="text" placeholder="Palmeiras" id="palmeiras"></p>
+        <p>Defina o time do Santos em uma frase: <input type="text" placeholder="Santos" id="santos"></p>
+        <p>Defina o time do São Paulo em uma frase: <input type="text" placeholder="São Paulo" id="sp"></p>
+        <p><button onclick="go()">Classificar times</button></p>
+    </div>
+
+    <ul>
+        <li><b>Corinthians:</b> <span id="cor"></span></li>
+        <li><b>Palmeiras:</b> <span id="pal"></span></li>
+        <li><b>Santos:</b> <span id="san"></span></li>
+        <li><b>São Paulo:</b> <span id="sao"></span></li>
+    </ul>
+</body>
+
+</html>
+
+<script>
+    function go() {
+        // pegar valor inserido em um input e colocar numa variavel
+        var corinthians = document.getElementById("corinthians").value;
+        document.getElementById("cor").innerHTML = corinthians
+        var palmeiras = document.getElementById("palmeiras").value;
+        document.getElementById("pal").innerHTML = palmeiras
+        var santos = document.getElementById("santos").value;
+        document.getElementById("san").innerHTML = santos
+        var sp = document.getElementById("sp").value;
+        document.getElementById("sao").innerHTML = sp
+    }
+</script>
