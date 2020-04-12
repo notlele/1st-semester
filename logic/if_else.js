@@ -66,3 +66,11 @@ if (pi == "s" && socioem == "s") {
 } else {
   alert("Infelizmente, fica para a próxima #deuruim");
 }
+
+
+// other exercise
+var numero = Number(prompt('Qual o número?'));
+var resultado = (numero==6 || numero==9)?'chilique' : 'de boa';
+// ? means if true, the 1st is used in the var, if false uses the 2nd
+
+alert(resultado);
