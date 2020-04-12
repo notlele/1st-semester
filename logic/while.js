@@ -74,3 +74,15 @@ while (count < 10) {
 document.write(
   `Total de números pares: ${pares} <br>Total de números ímpares: ${impares}`
 );
+
+
+// other exercise
+var frase = prompt("Qual frase você mais gosta?");
+var qtd = Number(prompt("Quantas vezes você quer vê-la?"));
+var contagem = 0;
+
+while (contagem < qtd) {
+  contagem++;
+  document.write(`${frase} `);
+	document.write(`${contagem}<br>`);
+}
