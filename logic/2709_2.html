@@ -1,0 +1,131 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Prova 02</title>
+</head>
+
+<body>
+    Qual seu nível de conversa? (0-10) <input type="number" id="conversa"><br>
+    Quantos livros já leu? (mínimo de 0) <input type="number" id="livros"><br>
+    Quantos jogos de celular, playstation ou xbox já jogou? (mínimo de 0) <input type="number" id="jogos"><br>
+    Quantos namorados(as) ou ficantes já teve? (mínimo de 0) <input type="number" id="namorados"><br><br>
+
+    <button onclick="analisar()">Analisar Perfil</button>
+    <br><br>
+
+    <div id="resultado" style="display: none">
+        <u>Boa de conversa?</u> <b id="sim1" style="color: green; display: none">SIM</b> <b id="nao1"
+            style="color: red; display: none">NÃO</b><br>
+
+        <u>Culta?</u> <b id="sim2" style="color: green; display: none">SIM</b> <b id="nao2"
+            style="color: red; display: none">NÃO</b><br>
+
+        <u>Curte um videogame?</u> <b id="sim3" style="color: green; display: none">SIM</b> <b id="nao3"
+            style="color: red; display: none">NÃO</b><br>
+
+        <u>Difícil de conquistar?</u> <b id="sim4" style="color: green; display: none">SIM</b> <b id="nao4"
+            style="color: red; display: none">NÃO</b><br>
+
+        <u>Boa de conversa e culta?</u> <b id="sim5" style="color: green; display: none">SIM</b> <b id="nao5"
+            style="color: red; display: none">NÃO</b><br>
+
+        <u>Boa de conversa e curte um videogame?</u> <b id="sim6" style="color: green; display: none">SIM</b> <b
+            id="nao6" style="color: red; display: none">NÃO</b><br>
+
+        <u>Não é culta e ainda é difícil (tá dificil pra essa pessoa, hein)?</u> <b id="sim7"
+            style="color: green; display: none">SIM</b> <b id="nao7" style="color: red; display: none">NÃO</b><br>
+
+        <b>Veredito:</b> Para eu marcar um encontro deve ser boa de conversa, culta mas não difícil de conquistar ou
+        difícil de conquistar e
+        curtir um videogame. É o caso? <b id="sim8" style="color: green; display: none">SIM</b> <b id="nao8"
+            style="color: red; display: none">NÃO</b><br>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function analisar() {
+            var conversa = Number(document.getElementById("conversa").value);
+            var livros = Number(document.getElementById("livros").value);
+            var jogos = Number(document.getElementById("jogos").value);
+            var namorados = Number(document.getElementById("namorados").value);
+
+            var conversa_true = conversa >= 6;
+            var livros_true = livros >= 10;
+            var jogos_true = jogos >= 10;
+            var namorados_true = namorados <= 3;
+
+            document.getElementById("resultado").style.display = 'block';
+
+            if (livros < 0 || conversa < 0 || conversa > 10 || jogos < 0 || namorados < 0) {
+                document.getElementById("resultado").style.display = 'none';
+                alert('Valor inválido. Verifique as orientações.');
+            }
+            if (conversa_true) {
+                document.getElementById("sim1").style.display = 'inline';
+                document.getElementById("nao1").style.display = 'none';
+            }
+            if (!conversa_true) {
+                document.getElementById("nao1").style.display = 'inline';
+                document.getElementById("sim1").style.display = 'none';
+            }
+            if (livros_true) {
+                document.getElementById("sim2").style.display = 'inline';
+                document.getElementById("nao2").style.display = 'none';
+            }
+            if (!livros_true) {
+                document.getElementById("nao2").style.display = 'inline';
+                document.getElementById("sim2").style.display = 'none';
+            }
+            if (jogos_true) {
+                document.getElementById("sim3").style.display = 'inline';
+                document.getElementById("nao3").style.display = 'none';
+            }
+            if (!jogos_true) {
+                document.getElementById("nao3").style.display = 'inline';
+                document.getElementById("sim3").style.display = 'none';
+            }
+            if (namorados_true) {
+                document.getElementById("sim4").style.display = 'inline';
+                document.getElementById("nao4").style.display = 'none';
+            }
+            if (!namorados_true) {
+                document.getElementById("nao4").style.display = 'inline';
+                document.getElementById("sim4").style.display = 'none';
+            }
+            if (conversa_true && livros_true) {
+                document.getElementById("sim5").style.display = 'inline';
+                document.getElementById("nao5").style.display = 'none';
+            }
+            else {
+                document.getElementById("nao5").style.display = 'inline';
+                document.getElementById("sim5").style.display = 'none';
+            }
+            if (conversa_true && jogos_true) {
+                document.getElementById("sim6").style.display = 'inline';
+                document.getElementById("nao6").style.display = 'none';
+            }
+            else {
+                document.getElementById("nao6").style.display = 'inline';
+                document.getElementById("sim6").style.display = 'none';
+            }
+            if (!livros_true && namorados_true) {
+                document.getElementById("sim7").style.display = 'inline';
+                document.getElementById("nao7").style.display = 'none';
+            }
+            else {
+                document.getElementById("nao7").style.display = 'inline';
+                document.getElementById("sim7").style.display = 'none';
+            }
+            if (conversa_true && livros_true && !namorados_true || namorados_true && jogos_true) {
+                document.getElementById("sim8").style.display = 'inline';
+                document.getElementById("nao8").style.display = 'none';
+            }
+            else {
+                document.getElementById("nao8").style.display = 'inline';
+                document.getElementById("sim8").style.display = 'none';
+            }
+        }
+</script>

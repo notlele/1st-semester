@@ -1,0 +1,25 @@
+<html>
+
+<body>
+    Insira um anime: <input type="text" id="anisearch"><br>
+    <button id="search_result" onclick='search()'>Pesquisar anime</button>
+</body>
+
+</html>
+
+<script>
+    var animes = ['Dragon Ball Z', 'Pokemon', 'Caverna do Dragão', 'X-men', 'Ursinhos Carinhosos'];
+    function search() {
+        var anisearch = document.getElementById('anisearch').value;
+
+        // percorrendo o array para ver se o termo existe nele
+
+        for (i = 0; i < animes.length; i++) {
+            if (anisearch == animes[i]) {
+                alert(`Sim, ele gosta desse anime`);
+                return;
+            }
+        }
+        alert("Não, não é do gosto dele!");
+    }
+</script>

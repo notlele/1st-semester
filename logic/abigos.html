@@ -1,0 +1,22 @@
+<html>
+
+<body>
+    Nº do amigo: <input type="number" id="nr"><br><br>
+    <button onclick='ver()'>Ver nome de amigo</button>
+</body>
+
+</html>
+
+<script>
+    var amigos = ['Abel', 'Miguel', 'Joel', 'Gabriel', 'Gael'];
+    function ver() {
+        var nr = Number(document.getElementById("nr").value);
+        var retorno = amigos[nr];
+        if (nr < amigos.length || nr > amigos.length) {
+            alert(`Numero inserido é inválido`);
+        }
+        else {
+            alert(`${retorno}`);
+        }
+    }
+</script>

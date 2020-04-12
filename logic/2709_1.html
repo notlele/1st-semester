@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Prova 01</title>
+</head>
+
+<body>
+    Candidato 1: <input id="candidato1" type="text"> Quantos votos recebeu: <input id="votos1" type="number"><br>
+    Candidato 2: <input id="candidato2" type="text"> Quantos votos recebeu: <input id="votos2" type="number"><br>
+    Votos brancos: <input id="brancos" type="number"><br>
+    Votos nulos: <input id="nulos" type="number"><br><br>
+
+    <button onclick="eleicao()">Finalizar eleição</button>
+    <br><br>
+    <div id="resultado" style="display: none">
+        <u>Total de votos:</u> <span id="total"></span><br>
+        <u>Total de votos válidos:</u> <span id="validos"></span><br>
+        <u>Brancos:</u> <span id="brancos-res"></span><br>
+        <u>Nulos:</u> <span id="nulos-res"></span><br>
+        Votos em <b id="candidato1-2"></b>: <span id="votos1-2"></span> (<span id="pct1"></span>% dos votos válidos)<br>
+        Votos em <b id="candidato2-2"></b>: <span id="votos2-2"></span> (<span id="pct2"></span>% dos votos válidos)<br>
+        <span id="vencedor-span" style="display: none"><u>Vencedor:</u> <b id="vencedor"></b>.</span>
+
+        <!-- Caso ocorra empate entre os candidatos, a última linha não deve anunciar o vencedor e sim ter o texto abaixo -->
+        <u id="empate" style="display: none">Atenção! A eleição não teve vencedor. É necessário realizar nova
+            eleição.</u>
+    </div>
+</body>
+
+</html>
+
+<script>
+        function eleicao() {
+                var candidato1 = document.getElementById("candidato1").value;
+                var candidato2 = document.getElementById("candidato2").value;
+                var votos1 = Number(document.getElementById("votos1").value);
+                var votos2 = Number(document.getElementById("votos2").value);
+                var brancos = Number(document.getElementById("brancos").value);
+                var nulos = Number(document.getElementById("nulos").value);
+
+                document.getElementById("resultado").style.display = 'block';
+
+                var total = votos1 + votos2 + brancos + nulos;
+                document.getElementById("total").innerHTML = total;
+                var validos = votos1 + votos2;
+                document.getElementById("validos").innerHTML = validos;
+                document.getElementById("brancos-res").innerHTML = brancos;
+                document.getElementById("nulos-res").innerHTML = nulos;
+                document.getElementById("candidato1-2").innerHTML = candidato1;
+                document.getElementById("candidato2-2").innerHTML = candidato2;
+                document.getElementById("votos1-2").innerHTML = votos1;
+                document.getElementById("votos2-2").innerHTML = votos2;
+
+                var pct1 = (votos1 / validos) * 100;
+                var pct2 = (votos2 / validos) * 100;
+
+                document.getElementById("pct1").innerHTML = pct1.toFixed(2);
+                document.getElementById("pct2").innerHTML = pct2.toFixed(2);
+
+                if (votos1 == votos2) {
+                    document.getElementById("vencedor-span").style.display = 'none';
+                    document.getElementById("empate").style.display = 'block';
+                }
+
+                else {
+                    document.getElementById("vencedor-span").style.display = 'block';
+
+                    if (votos1 > votos2) {
+                        document.getElementById("vencedor").innerHTML = candidato1;
+                    }
+
+                    if (votos2 > votos1) {
+                        document.getElementById("vencedor").innerHTML = candidato2;
+                    }
+                }
+            }
+</script>
